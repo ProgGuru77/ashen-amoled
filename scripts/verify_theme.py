@@ -51,6 +51,13 @@ assert '--ashen-gap:' in content, "Declarative --ashen-gap missing"
 assert '--ashen-animations:' in content, "Declarative --ashen-animations toggle missing"
 assert '--ashen-transition-normal:' in content, "Declarative --ashen-transition-normal missing"
 assert '--ashen-border-radius-sm:' in content, "Declarative --ashen-border-radius-sm missing"
+assert '--ashen-accent-hue:' in content, "Declarative --ashen-accent-hue toggle missing"
+assert '--ashen-amoled-mode:' in content, "Declarative --ashen-amoled-mode missing"
+
+# Check High-Contrast Icon Tokens & Controls
+assert '--icon-primary:' in content, "Discord native --icon-primary missing"
+assert '--channel-icon:' in content, "Discord native --channel-icon missing"
+assert '[class*="circleIconButton_"]' in content, "Guild rail circle icon button styling missing"
 
 # Check OKLCH Perceptually Uniform Scales (Spec §2.2)
 oklch_matches = re.findall(r'oklch\([^)]+\)', content)

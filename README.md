@@ -11,8 +11,9 @@
 
 ## ✨ Features
 
-- **🖤 Pure AMOLED Black (`#000000`):** True-black background across all chat containers, channels, and member lists. Ideal for OLED displays with zero backlight bleed.
-- **🔥 Ashen Crimson Highlights:** Vivid crimson accents, glowing unread indicators, and smooth gradient mention banners.
+- **🖤 Maximum AMOLED Black (`#000000` Default):** 100% true-black background across all chat containers, channels, servers rail, and member lists. Pixels turn completely OFF for optimal OLED efficiency and zero backlight bleed.
+- **🔥 Dynamic OKLCH Color System:** Perceptually uniform OKLCH accent scales toggleable via `--ashen-accent-hue` (Crimson, Amber, Emerald, Cyan, Sapphire, Amethyst) with smooth `color-mix()` glow and mention banners.
+- **🎯 High-Contrast Icon Calibration:** Overrides Discord's native icon tokens (`--icon-primary`, `--channel-icon`, etc.) and provides elevated AMOLED tiles for server circle buttons and reaction badges so icons never look muddy or blend into backgrounds.
 - **🏛️ Cinzel Typography:** Classical serif headers for server titles, category channels, and modal windows with bundled local fonts.
 - **📹 Glitch-Free Video & Screenshares:** Fully transparent video overlay shields ensure stream feeds and camera calls never get blocked by black boxes.
 - **⚡ Fluid Interactions:** Smooth transitions on hover, custom reaction pills, and crimson glow on focused buttons and inputs.
@@ -52,12 +53,31 @@
 
 ---
 
-## 🎨 Customization
+## 🎨 Customization & Color Toggling
 
-You can easily customize Ashen AMOLED by editing the configuration variables at the top of `ashen-amoled.theme.css`:
+You can easily customize Ashen AMOLED by editing the declarative configuration variables at the top of `ashen-amoled.theme.css`:
 
 ```css
 :root {
+  /* ------------------------------------------------------------------------
+     OKLCH DYNAMIC COLOR SYSTEM
+     ------------------------------------------------------------------------
+     To toggle the accent hue across the entire theme, adjust --ashen-accent-hue:
+       - Ashen Crimson (Default): 18deg
+       - Blood Coral:             45deg
+       - Radiant Amber / Gold:    88deg
+       - Cyber Emerald:          165deg
+       - Abyssal / Ice Cyan:     210deg
+       - Royal Sapphire:         260deg
+       - Void Amethyst:          310deg
+       - Ashen Rose / Magenta:    345deg
+  ------------------------------------------------------------------------ */
+  --ashen-accent-hue: 18deg;
+  --ashen-accent-chroma: 0.22;
+
+  /* AMOLED Intensity Mode: 'max' (Default: 100% True Black #000000 across all panels) */
+  --ashen-amoled-mode: max;
+
   /* Layout & Corners */
   --ashen-border-radius-sm: 4px;   /* Small badges & reactions */
   --ashen-border-radius-md: 8px;   /* Modals, cards, text areas */
@@ -67,9 +87,6 @@ You can easily customize Ashen AMOLED by editing the configuration variables at 
   --ashen-animations: on;          /* Smooth button & list transitions */
   --ashen-panel-blur: off;         /* Optional frosted glass effect on panels */
   --ashen-blur-amount: 12px;       /* Strength of frosted blur */
-
-  /* Primary Accent Color */
-  --ashen-accent-crimson: #ff2a4b; /* Change to any accent hue you like! */
 }
 ```
 
