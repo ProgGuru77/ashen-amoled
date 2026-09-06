@@ -28,7 +28,7 @@
 **Interfaces:**
 - Produces: `fonts.css` with `@font-face` rules for `Cinzel` (weights 600 and 700) consumed by `@import url('./fonts.css');` in `ashen-amoled.theme.css`.
 
-- [ ] **Step 1: Write font decoder and verification script**
+- [x] **Step 1: Write font decoder and verification script**
 
 Create `scripts/decode_fonts.py`:
 ```python
@@ -50,12 +50,12 @@ with open('fonts/Cinzel-Bold.woff2', 'wb') as f:
 print("Successfully decoded fonts into fonts/ directory.")
 ```
 
-- [ ] **Step 2: Run decoder and verify binary output**
+- [x] **Step 2: Run decoder and verify binary output**
 
 Run: `python scripts/decode_fonts.py`
 Expected: "Successfully decoded fonts into fonts/ directory."
 
-- [ ] **Step 3: Create `fonts.css`**
+- [x] **Step 3: Create `fonts.css`**
 
 Create `fonts.css` with local file loading and data URI fallback:
 ```css
@@ -80,12 +80,12 @@ Create `fonts.css` with local file loading and data URI fallback:
 }
 ```
 
-- [ ] **Step 4: Verify font files exist and have size > 20KB**
+- [x] **Step 4: Verify font files exist and have size > 20KB**
 
 Run: `powershell -Command "Get-ChildItem fonts | Select-Object Name, Length"`
 Expected: `Cinzel-SemiBold.woff2` (~37KB) and `Cinzel-Bold.woff2` (~37KB).
 
-- [ ] **Step 5: Commit font assets**
+- [x] **Step 5: Commit font assets**
 
 ```bash
 git add fonts/ fonts.css scripts/decode_fonts.py
@@ -105,7 +105,7 @@ git commit -m "feat(fonts): extract and decode Cinzel woff2 binaries and add fon
 - Implements: Approach 2 (`#app-mount` prefixing) across 11 segmented modules.
 - Enforces: Stream transparency and Guild rail scoping.
 
-- [ ] **Step 1: Write `ashen-amoled.theme.css`**
+- [x] **Step 1: Write `ashen-amoled.theme.css`**
 
 Implement complete stylesheet with:
 1. Meta banner & `@import url('./fonts.css');`
@@ -141,7 +141,7 @@ Implement complete stylesheet with:
 ```
 11. Expression picker and user settings.
 
-- [ ] **Step 2: Run verification script to test `!important` count and syntax**
+- [x] **Step 2: Run verification script to test `!important` count and syntax**
 
 Create `scripts/verify_theme.py`:
 ```python
@@ -171,7 +171,7 @@ print("ALL CHECKS PASSED.")
 Run: `python scripts/verify_theme.py`
 Expected: PASS with `!important < 30`, `has_stream_shield: True`, `brittle_hashes: 0`.
 
-- [ ] **Step 3: Commit theme file**
+- [x] **Step 3: Commit theme file**
 
 ```bash
 git add ashen-amoled.theme.css scripts/verify_theme.py
@@ -185,19 +185,19 @@ git commit -m "feat(theme): build refactored ashen-amoled.theme.css with Approac
 **Files:**
 - Modify: `README.md` (installation & structure guide)
 
-- [ ] **Step 1: Create documentation / README**
+- [x] **Step 1: Create documentation / README**
 
 Create `README.md` documenting:
 - How to install in Vencord (`ashen-amoled.theme.css` + `fonts/` + `fonts.css`).
 - Architecture explanation (Approach 2).
 - Board of Directors review summary.
 
-- [ ] **Step 2: Full git diff and status verification**
+- [x] **Step 2: Full git diff and status verification**
 
 Run: `git status`
 Expected: Working tree clean.
 
-- [ ] **Step 3: Commit README**
+- [x] **Step 3: Commit README**
 
 ```bash
 git add README.md
