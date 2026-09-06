@@ -49,6 +49,7 @@ def package_release():
         ('fonts.css', 'fonts.css'),
         ('fonts/Cinzel-SemiBold.woff2', 'fonts/Cinzel-SemiBold.woff2'),
         ('fonts/Cinzel-Bold.woff2', 'fonts/Cinzel-Bold.woff2'),
+        ('.stylelintrc.json', '.stylelintrc.json'),
         ('README.md', 'README.md'),
     ]
 

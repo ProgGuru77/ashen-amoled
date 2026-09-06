@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "focus-within"
+        ]
+      }
+    ],
+    "no-duplicate-selectors": true,
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "declaration-block-no-duplicate-properties": true,
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "custom-property-pattern": null
+  }
+}
