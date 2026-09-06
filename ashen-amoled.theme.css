@@ -1,0 +1,415 @@
+/**
+ * @name Ashen AMOLED
+ * @description High-contrast pure AMOLED black theme with Ashen Crimson highlights and Cinzel typography.
+ * @version 2.0.0
+ * @author ProgGuru77
+ * @source https://github.com/ProgGuru77/ashen-amoled
+ */
+
+/* ==========================================================================
+   1. Imports & Typography
+   ========================================================================== */
+@import url('./fonts.css');
+
+/* ==========================================================================
+   2. Design Tokens & AMOLED Color Palette
+   ========================================================================== */
+:root,
+.theme-dark,
+#app-mount {
+  /* Ashen Brand Palette */
+  --ashen-black: #000000;
+  --ashen-bg-primary: #000000;
+  --ashen-bg-secondary: #070707;
+  --ashen-bg-tertiary: #0e0e0e;
+  --ashen-bg-surface: #141414;
+  --ashen-bg-elevated: #1a1a1a;
+  
+  --ashen-accent-crimson: #ff2a4b;
+  --ashen-accent-hover: #ff4766;
+  --ashen-accent-active: #d61b38;
+  --ashen-accent-dark: #8b0000;
+  --ashen-accent-glow: rgba(255, 42, 75, 0.35);
+  --ashen-accent-subtle: rgba(255, 42, 75, 0.12);
+  
+  --ashen-border-subtle: #1e1e1e;
+  --ashen-border-accent: rgba(255, 42, 75, 0.3);
+  
+  --ashen-text-normal: #dedede;
+  --ashen-text-muted: #8e8e93;
+  --ashen-text-header: #ffffff;
+  --ashen-font-display: 'Cinzel', serif;
+
+  /* Discord Token Overrides */
+  --bg-base-primary: #000000;
+  --bg-base-secondary: #070707;
+  --bg-base-tertiary: #0e0e0e;
+  --background-primary: #000000;
+  --background-secondary: #070707;
+  --background-secondary-alt: #0a0a0a;
+  --background-tertiary: #000000;
+  --background-accent: #ff2a4b;
+  --background-floating: #0e0e0e;
+  
+  --channeltextarea-background: #0a0a0a;
+  --activity-card-background: #0a0a0a;
+  --modal-background: #080808;
+  --modal-footer-background: #030303;
+  
+  --interactive-normal: #c5c5cb;
+  --interactive-hover: #ffffff;
+  --interactive-active: #ff2a4b;
+  --interactive-muted: #58585f;
+  
+  --text-normal: #dedede;
+  --text-muted: #8e8e93;
+  --text-link: #ff4766;
+  --header-primary: #ffffff;
+  --header-secondary: #b5b5ba;
+  
+  --brand-experiment: #ff2a4b;
+  --brand-experiment-500: #ff2a4b;
+  --brand-500: #ff2a4b;
+  --status-danger: #ff2a4b;
+}
+
+/* ==========================================================================
+   3. App Base & Window Chrome
+   ========================================================================== */
+#app-mount {
+  background-color: var(--ashen-bg-primary);
+}
+
+#app-mount [class*="app_"],
+#app-mount [class*="appAsidePanelWrapper_"],
+#app-mount [class*="base_"],
+#app-mount [class*="layers_"],
+#app-mount [class*="layer_"],
+#app-mount [class*="container_"][class*="themed_"] {
+  background: var(--ashen-bg-primary);
+  background-color: var(--ashen-bg-primary);
+}
+
+#app-mount [class*="title_"][class*="container_"] {
+  background-color: var(--ashen-bg-primary);
+  border-bottom: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount [class*="typeWindows_"] {
+  background-color: var(--ashen-bg-primary);
+  border-bottom: 1px solid var(--ashen-border-subtle);
+  height: 22px;
+  margin-top: 0;
+  padding: 0 4px;
+}
+
+#app-mount [class*="wordmarkWindows_"] {
+  color: var(--ashen-accent-crimson);
+  font-family: var(--ashen-font-display);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================================================
+   4. Consolidated Thin Scrollbars & Overflow Lockdown
+   ========================================================================== */
+#app-mount *::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+#app-mount *::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#app-mount *::-webkit-scrollbar-thumb {
+  background: #252528;
+  border-radius: 4px;
+}
+
+#app-mount *::-webkit-scrollbar-thumb:hover {
+  background: var(--ashen-accent-crimson);
+}
+
+#app-mount [class*="scrollerBase_"] {
+  scrollbar-width: thin !important;
+  scrollbar-color: #252528 transparent;
+}
+
+/* ==========================================================================
+   5. Guilds Rail (Server List) - Strictly Scoped
+   ========================================================================== */
+#app-mount nav[class*="guilds_"] {
+  background-color: var(--ashen-bg-primary);
+  border-right: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount nav[class*="guilds_"] [class*="scroller_"] {
+  background-color: var(--ashen-bg-primary);
+}
+
+#app-mount nav[class*="guilds_"] [class*="pill_"] [class*="item_"] {
+  background-color: var(--ashen-accent-crimson);
+  box-shadow: 0 0 6px var(--ashen-accent-glow);
+}
+
+#app-mount nav[class*="guilds_"] [class*="folder_"] {
+  background-color: var(--ashen-bg-secondary);
+}
+
+#app-mount nav[class*="guilds_"] [class*="expandedFolderBackground_"] {
+  background-color: var(--ashen-bg-secondary);
+}
+
+#app-mount nav[class*="guilds_"] [class*="numberBadge_"] {
+  background-color: var(--ashen-accent-crimson) !important;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   6. Channels & Private Messages Sidebar
+   ========================================================================== */
+#app-mount [class*="sidebar_"],
+#app-mount [class*="privateChannels_"] {
+  background-color: var(--ashen-bg-secondary);
+  border-right: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount [class*="sidebar_"] [class*="container_"] {
+  background-color: var(--ashen-bg-secondary);
+}
+
+/* Category Headers */
+#app-mount [class*="sidebar_"] [class*="containerDefault_"] [class*="wrapper_"] h2,
+#app-mount [class*="sidebar_"] [class*="containerDefault_"] [class*="name_"] {
+  font-family: var(--ashen-font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+/* Channel Items */
+#app-mount [class*="sidebar_"] [class*="wrapper_"] [class*="content_"] {
+  border-radius: 4px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+#app-mount [class*="sidebar_"] [class*="wrapper_"]:hover [class*="content_"] {
+  background-color: var(--ashen-bg-surface);
+}
+
+#app-mount [class*="sidebar_"] [class*="modeSelected_"] [class*="content_"] {
+  background-color: var(--ashen-bg-elevated);
+  border-left: 2px solid var(--ashen-accent-crimson);
+}
+
+#app-mount [class*="sidebar_"] [class*="modeUnreadImportant_"] [class*="unread_"] {
+  background-color: var(--ashen-accent-crimson);
+  box-shadow: 0 0 5px var(--ashen-accent-glow);
+}
+
+/* User Account & Voice Controls Panel */
+#app-mount [class*="panels_"] {
+  background-color: var(--ashen-bg-primary);
+  border-top: 1px solid var(--ashen-border-subtle);
+}
+
+/* ==========================================================================
+   7. Chat Pane, Message Stream, and Composer
+   ========================================================================== */
+#app-mount [class*="chat_"],
+#app-mount [class*="chatContent_"] {
+  background-color: var(--ashen-bg-primary);
+}
+
+#app-mount [class*="messagesWrapper_"] [class*="scroller_"] {
+  background-color: var(--ashen-bg-primary);
+}
+
+/* Message Item Hover & States */
+#app-mount [class*="message_"]:hover {
+  background-color: #060606;
+}
+
+#app-mount [class*="message_"][class*="mentioned_"] {
+  background-color: var(--ashen-accent-subtle);
+  border-left: 2px solid var(--ashen-accent-crimson);
+}
+
+#app-mount [class*="message_"][class*="mentioned_"]::before {
+  background-color: var(--ashen-accent-crimson);
+}
+
+/* Code Blocks and Embeds */
+#app-mount [class*="markup_"] pre code,
+#app-mount [class*="codeBlock_"] {
+  background-color: var(--ashen-bg-secondary);
+  border: 1px solid var(--ashen-border-subtle);
+  border-radius: 4px;
+}
+
+#app-mount [class*="embedFull_"] {
+  background-color: var(--ashen-bg-secondary);
+  border-left-color: var(--ashen-accent-crimson);
+  border: 1px solid var(--ashen-border-subtle);
+  border-left-width: 3px;
+  border-radius: 4px;
+}
+
+/* Chat Input Bar / Composer */
+#app-mount [class*="channelTextArea_"] {
+  background-color: var(--ashen-bg-secondary);
+  border: 1px solid var(--ashen-border-subtle);
+  border-radius: 8px;
+}
+
+#app-mount [class*="channelTextArea_"]:focus-within {
+  border-color: var(--ashen-accent-crimson);
+  box-shadow: 0 0 8px var(--ashen-accent-subtle);
+}
+
+#app-mount [class*="scrollableContainer_"] {
+  background-color: var(--ashen-bg-secondary);
+}
+
+/* ==========================================================================
+   8. Badges, Buttons, and Interactive Components
+   ========================================================================== */
+#app-mount button[class*="button_"][class*="colorBrand_"],
+#app-mount button[class*="button_"][class*="colorPrimary_"],
+#app-mount button[class*="button_"][class*="lookFilled_"][class*="colorBrand_"] {
+  background-color: var(--ashen-accent-crimson);
+  color: #ffffff;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#app-mount button[class*="button_"][class*="lookFilled_"][class*="colorBrand_"]:hover {
+  background-color: var(--ashen-accent-hover);
+  box-shadow: 0 0 10px var(--ashen-accent-glow);
+}
+
+#app-mount [class*="reaction_"] {
+  background-color: var(--ashen-bg-secondary);
+  border: 1px solid var(--ashen-border-subtle);
+  border-radius: 4px;
+}
+
+#app-mount [class*="reaction_"][class*="reactionMe_"] {
+  background-color: var(--ashen-accent-subtle);
+  border-color: var(--ashen-accent-crimson);
+}
+
+#app-mount [class*="reaction_"][class*="reactionMe_"] [class*="reactionCount_"] {
+  color: var(--ashen-accent-crimson);
+}
+
+/* Popouts & Context Menus */
+#app-mount [class*="menu_"] {
+  background-color: var(--ashen-bg-tertiary);
+  border: 1px solid var(--ashen-border-subtle);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+}
+
+#app-mount [class*="menu_"] [class*="item_"]:hover {
+  background-color: var(--ashen-accent-crimson);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   9. User Profiles, Member List, and Activity Cards
+   ========================================================================== */
+#app-mount [class*="membersWrap_"],
+#app-mount [class*="members_"] {
+  background-color: var(--ashen-bg-secondary);
+  border-left: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount [class*="members_"] [class*="member_"] {
+  background: transparent;
+}
+
+#app-mount [class*="members_"] [class*="member_"]:hover {
+  background-color: var(--ashen-bg-surface);
+}
+
+#app-mount [class*="membersGroup_"] {
+  font-family: var(--ashen-font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ashen-text-muted);
+}
+
+#app-mount [class*="userProfileOuter_"] {
+  border: 1px solid var(--ashen-border-subtle);
+  background-color: var(--ashen-bg-primary);
+}
+
+#app-mount [class*="userProfileInner_"] {
+  background-color: var(--ashen-bg-secondary);
+}
+
+/* ==========================================================================
+   10. Stream & Video Call Transparency Shield
+   ========================================================================== */
+#app-mount [class*="callContainer_"],
+#app-mount [class*="wrapper_"][class*="video_"],
+#app-mount [class*="videoWrapper_"],
+#app-mount [class*="streamWrapper_"],
+#app-mount [class*="focusedVideo_"],
+#app-mount [class*="videoGrid_"],
+#app-mount [class*="videoGridWrapper_"],
+#app-mount [class*="tileChild_"],
+#app-mount [class*="participantsWrapper_"],
+#app-mount [class*="participantsWrapper_"] [class*="scrollerBase_"],
+#app-mount [class*="participantsWrapper_"] [class*="scroller_"],
+#app-mount [class*="verticalScroller_"],
+#app-mount [class*="videoControls_"],
+#app-mount [class*="topControls_"],
+#app-mount [class*="gradientContainer_"],
+#app-mount [class*="bottomControls_"] {
+  background: transparent;
+  background-color: transparent;
+}
+
+/* Participant Floating Overlay Scroller Safeguard */
+#app-mount [class*="participantsWrapper_"] [class*="scroller_"][class*="none_"] {
+  background: transparent;
+  background-color: transparent;
+}
+
+#app-mount [class*="tile_"] {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   11. Expression Picker, Modals, and Settings
+   ========================================================================== */
+#app-mount [class*="contentWrapper_"],
+#app-mount [class*="emojiPicker_"] {
+  background-color: var(--ashen-bg-tertiary);
+  border: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount [class*="standardSidebarView_"] {
+  background-color: var(--ashen-bg-primary);
+}
+
+#app-mount [class*="standardSidebarView_"] [class*="sidebarRegion_"],
+#app-mount [class*="standardSidebarView_"] [class*="sidebarRegionScroller_"] {
+  background-color: var(--ashen-bg-secondary);
+  border-right: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount [class*="standardSidebarView_"] [class*="contentRegion_"],
+#app-mount [class*="standardSidebarView_"] [class*="contentRegionScroller_"] {
+  background-color: var(--ashen-bg-primary);
+}
+
+#app-mount [class*="standardSidebarView_"] [class*="side_"] [class*="header_"] {
+  font-family: var(--ashen-font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ashen-accent-crimson);
+}
