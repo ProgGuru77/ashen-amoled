@@ -1,8 +1,8 @@
-# 🌑 Ashen AMOLED (v2.2.0)
+# 🌑 Ashen AMOLED (v2.2.1)
 
 > A high-contrast, pure AMOLED black theme with Ashen Crimson highlights and Cinzel typography for Discord.
 
-[![Version](https://img.shields.io/badge/version-2.2.0-ff2a4b.svg)](https://github.com/ProgGuru77/ashen-amoled/releases)
+[![Version](https://img.shields.io/badge/version-2.2.1-ff2a4b.svg)](https://github.com/ProgGuru77/ashen-amoled/releases)
 [![Clients](https://img.shields.io/badge/clients-Vencord%20%7C%20BetterDiscord-black.svg)](https://vencord.dev)
 [![License](https://img.shields.io/badge/license-MIT-red.svg)](#license)
 [![OLED Friendly](https://img.shields.io/badge/display-Pure%20AMOLED%20%23000000-000000.svg)](#features)
@@ -38,7 +38,7 @@
 ### Method 2: Manual / Local Installation
 
 #### For Vencord:
-1. Download the latest `ashen-amoled-v2.2.0.zip` from [Releases](https://github.com/ProgGuru77/ashen-amoled/releases).
+1. Download the latest `ashen-amoled-v2.2.1.zip` from [Releases](https://github.com/ProgGuru77/ashen-amoled/releases).
 2. Extract the folder into your Vencord themes directory:
    - **Windows:** `%AppData%\Vencord\themes\ashen-amoled`
    - **Linux:** `~/.config/Vencord/themes/ashen-amoled`
