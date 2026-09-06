@@ -26,27 +26,11 @@
   /* AMOLED Intensity Mode: 'max' (Default: 100% True Black #000000 across all panels) */
   --ashen-amoled-mode: max;
 
-  /* ------------------------------------------------------------------------
-     COLOR & PALETTE CONFIGURATION (OKLCH Dynamic Engine)
-     ------------------------------------------------------------------------
-     To toggle / customize the accent color, adjust --ashen-accent-hue (0deg - 360deg):
-       - Ashen Crimson (Default): 18deg
-       - Blood Coral:             45deg
-       - Radiant Amber / Gold:    88deg
-       - Cyber Emerald:          165deg
-       - Abyssal / Ice Cyan:     210deg
-       - Royal Sapphire:         260deg
-       - Void Amethyst:          310deg
-       - Ashen Rose / Magenta:    345deg
-     ------------------------------------------------------------------------ */
-  --ashen-accent-hue: 18deg;
-  --ashen-accent-chroma: 0.22;
-
-  /* Dynamic Accent Scale (Spec §2.2) */
-  --ashen-accent-crimson: oklch(63% var(--ashen-accent-chroma) var(--ashen-accent-hue));
-  --ashen-accent-hover: oklch(70% var(--ashen-accent-chroma) var(--ashen-accent-hue));
-  --ashen-accent-active: oklch(55% var(--ashen-accent-chroma) var(--ashen-accent-hue));
-  --ashen-accent-dark: oklch(40% var(--ashen-accent-chroma) var(--ashen-accent-hue));
+  /* Primary Accent: Absolute Maximum Vivid Crimson (Peak Chroma 0.28) */
+  --ashen-accent-crimson: oklch(62% 0.28 22deg);
+  --ashen-accent-hover: oklch(70% 0.28 22deg);
+  --ashen-accent-active: oklch(54% 0.28 22deg);
+  --ashen-accent-dark: oklch(40% 0.24 22deg);
 
   /* Feature Toggles: 'on' or 'off' */
   --ashen-animations: on;
@@ -77,12 +61,12 @@
   --ashen-bg-elevated: #181818;
 
   /* OKLCH Perceptually Uniform Scales (Spec §2.2) */
-  /* Dynamic Accent Ramp: Driven by --ashen-accent-hue */
-  --ashen-crimson-1: oklch(75% 0.18 var(--ashen-accent-hue));
-  --ashen-crimson-2: oklch(70% 0.20 var(--ashen-accent-hue));
-  --ashen-crimson-3: oklch(63% 0.22 var(--ashen-accent-hue));
-  --ashen-crimson-4: oklch(55% 0.20 var(--ashen-accent-hue));
-  --ashen-crimson-5: oklch(45% 0.18 var(--ashen-accent-hue));
+  /* Absolute Maximum Crimson Ramp: Peak Chroma 0.28, Hue 22deg */
+  --ashen-crimson-1: oklch(75% 0.22 22deg);
+  --ashen-crimson-2: oklch(68% 0.25 22deg);
+  --ashen-crimson-3: oklch(62% 0.28 22deg);
+  --ashen-crimson-4: oklch(54% 0.25 22deg);
+  --ashen-crimson-5: oklch(45% 0.22 22deg);
 
   /* Online / Green Ramp: Hue 165deg */
   --ashen-online-1: oklch(75% 0.12 165deg);
