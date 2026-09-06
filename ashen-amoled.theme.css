@@ -1,7 +1,7 @@
 /**
  * @name Ashen AMOLED
  * @description High-contrast pure AMOLED black theme with Ashen Crimson highlights and Cinzel typography.
- * @version 2.0.0
+ * @version 2.1.0
  * @author ProgGuru77
  * @source https://github.com/ProgGuru77/ashen-amoled
  */
@@ -413,3 +413,189 @@
   letter-spacing: 0.08em;
   color: var(--ashen-accent-crimson);
 }
+
+/* ==========================================================================
+   12. QuickSwitcher & Search Matrix
+   ========================================================================== */
+#app-mount [class*="quickswitcher_"] {
+  background-color: var(--ashen-bg-tertiary);
+  border: 1px solid var(--ashen-border-subtle);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.95);
+  border-radius: 8px;
+}
+
+#app-mount [class*="quickswitcher_"] [class*="input_"] {
+  background-color: var(--ashen-bg-secondary);
+  border: 1px solid var(--ashen-border-subtle);
+  color: var(--ashen-text-header);
+}
+
+#app-mount [class*="quickswitcher_"] [class*="input_"]:focus {
+  border-color: var(--ashen-accent-crimson);
+  box-shadow: 0 0 8px var(--ashen-accent-subtle);
+}
+
+#app-mount [class*="quickswitcher_"] [class*="scroller_"] {
+  background-color: var(--ashen-bg-tertiary);
+}
+
+#app-mount [class*="quickswitcher_"] [class*="result_"] {
+  border-radius: 4px;
+  transition: background 0.1s ease;
+}
+
+#app-mount [class*="quickswitcher_"] [class*="result_"][aria-selected="true"] {
+  background-color: var(--ashen-bg-elevated);
+  border-left: 2px solid var(--ashen-accent-crimson);
+}
+
+#app-mount [class*="searchResultsWrap_"] {
+  background-color: var(--ashen-bg-secondary);
+  border-left: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount [class*="searchHeader_"] {
+  background-color: var(--ashen-bg-secondary);
+  border-bottom: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount [class*="searchResult_"] {
+  background-color: var(--ashen-bg-tertiary);
+  border: 1px solid var(--ashen-border-subtle);
+  border-radius: 4px;
+}
+
+#app-mount [class*="searchDropdown_"] {
+  background-color: var(--ashen-bg-tertiary);
+  border: 1px solid var(--ashen-border-subtle);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+}
+
+/* ==========================================================================
+   13. Chat Autocomplete & Mention Popouts
+   ========================================================================== */
+#app-mount [class*="autocomplete_"] {
+  background-color: var(--ashen-bg-tertiary);
+  border: 1px solid var(--ashen-border-subtle);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+}
+
+#app-mount [class*="autocomplete_"] [class*="autocompleteInner_"] {
+  background-color: var(--ashen-bg-tertiary);
+}
+
+#app-mount [class*="autocomplete_"] [class*="categoryHeader_"] {
+  background-color: var(--ashen-bg-tertiary);
+  font-family: var(--ashen-font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--ashen-accent-crimson);
+}
+
+#app-mount [class*="autocomplete_"] [class*="clickable_"]:hover,
+#app-mount [class*="autocomplete_"] [class*="clickable_"][aria-selected="true"],
+#app-mount [class*="autocomplete_"] [class*="baseSelected_"] {
+  background-color: var(--ashen-accent-crimson);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   14. Extended Cinzel Typography Suite
+   ========================================================================== */
+#app-mount [class*="header_"][class*="guildHeader_"],
+#app-mount [class*="sidebar_"] [class*="headerContent_"] {
+  font-family: var(--ashen-font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+#app-mount [class*="title_"] [class*="title_"],
+#app-mount [class*="title_"] h1,
+#app-mount [class*="title_"] h2,
+#app-mount [class*="title_"] h3 {
+  font-family: var(--ashen-font-display);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+#app-mount [class*="root_"] h1,
+#app-mount [class*="root_"] h2,
+#app-mount [class*="root_"] h3 {
+  font-family: var(--ashen-font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ashen-text-header);
+}
+
+/* ==========================================================================
+   15. Friends Tab & Active Now Dashboard
+   ========================================================================== */
+#app-mount [class*="nowPlayingColumn_"] {
+  background-color: var(--ashen-bg-secondary);
+  border-left: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount [class*="nowPlayingColumn_"] [class*="container_"] {
+  background-color: var(--ashen-bg-secondary);
+}
+
+#app-mount [class*="nowPlayingColumn_"] [class*="itemCard_"] {
+  background-color: var(--ashen-bg-tertiary);
+  border: 1px solid var(--ashen-border-subtle);
+  border-radius: 8px;
+}
+
+#app-mount [class*="nowPlayingColumn_"] [class*="itemCard_"]:hover {
+  border-color: var(--ashen-border-accent);
+}
+
+#app-mount [class*="peopleColumn_"] {
+  background-color: var(--ashen-bg-primary);
+}
+
+#app-mount [class*="peopleListItem_"] {
+  border-top: 1px solid var(--ashen-border-subtle);
+}
+
+#app-mount [class*="peopleListItem_"]:hover {
+  background-color: var(--ashen-bg-surface);
+}
+
+/* ==========================================================================
+   16. Codeblocks & Syntax Highlighting Accent
+   ========================================================================== */
+#app-mount code.inline {
+  background-color: var(--ashen-bg-secondary);
+  border: 1px solid var(--ashen-border-subtle);
+  color: var(--ashen-accent-hover);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+#app-mount [class*="codeView_"] .hljs-keyword,
+#app-mount [class*="codeBlock_"] .hljs-keyword,
+#app-mount [class*="codeView_"] .hljs-selector-tag {
+  color: var(--ashen-accent-crimson);
+  font-weight: 600;
+}
+
+#app-mount [class*="codeView_"] .hljs-string,
+#app-mount [class*="codeBlock_"] .hljs-string {
+  color: #e07a5f;
+}
+
+#app-mount [class*="codeView_"] .hljs-comment,
+#app-mount [class*="codeBlock_"] .hljs-comment {
+  color: #6c757d;
+  font-style: italic;
+}
+
+#app-mount [class*="codeView_"] .hljs-title,
+#app-mount [class*="codeBlock_"] .hljs-title,
+#app-mount [class*="codeView_"] .hljs-function {
+  color: #f4a261;
+}
+

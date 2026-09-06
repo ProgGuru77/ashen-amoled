@@ -26,7 +26,27 @@ assert border_left_idx > border_idx, "border shorthand must precede border-left 
 # Check menu focused selector
 assert '[class*="menu_"] [class*="item_"][class*="focused_"]' in content, "menu item focused_ state missing"
 
-assert importants < 30, f"Too many !important flags: {importants}"
+# Check Module 12: QuickSwitcher & Search Matrix
+assert '[class*="quickswitcher_"]' in content, "QuickSwitcher styling missing"
+assert '[class*="searchResultsWrap_"]' in content, "Search results styling missing"
+
+# Check Module 13: Chat Autocomplete
+assert '[class*="autocomplete_"]' in content, "Autocomplete styling missing"
+assert '[class*="autocompleteInner_"]' in content, "Autocomplete inner container styling missing"
+
+# Check Module 14: Extended Cinzel Typography
+assert '[class*="header_"][class*="guildHeader_"]' in content, "Guild header Cinzel binding missing"
+assert '[class*="root_"] h1' in content, "Modal headers Cinzel binding missing"
+
+# Check Module 15: Friends & Active Now
+assert '[class*="nowPlayingColumn_"]' in content, "nowPlayingColumn_ styling missing"
+assert '[class*="peopleColumn_"]' in content, "peopleColumn_ styling missing"
+
+# Check Module 16: Codeblocks & Syntax Highlighting
+assert 'code.inline' in content, "Inline code styling missing"
+assert '.hljs-keyword' in content, "Syntax highlighting keyword styling missing"
+
+assert importants < 10, f"Too many !important flags: {importants}"
 assert has_stream_shield, "Missing stream transparency shield"
 assert len(brittle_hashes) == 0, f"Found brittle hashes: {brittle_hashes[:5]}"
 print("ALL CHECKS PASSED.")
