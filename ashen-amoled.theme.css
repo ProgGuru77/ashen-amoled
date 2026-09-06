@@ -251,9 +251,8 @@
 
 #app-mount [class*="embedFull_"] {
   background-color: var(--ashen-bg-secondary);
-  border-left-color: var(--ashen-accent-crimson);
   border: 1px solid var(--ashen-border-subtle);
-  border-left-width: 3px;
+  border-left: 3px solid var(--ashen-accent-crimson);
   border-radius: 4px;
 }
 
@@ -311,7 +310,8 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
 }
 
-#app-mount [class*="menu_"] [class*="item_"]:hover {
+#app-mount [class*="menu_"] [class*="item_"]:hover,
+#app-mount [class*="menu_"] [class*="item_"][class*="focused_"] {
   background-color: var(--ashen-accent-crimson);
   color: #ffffff;
 }
