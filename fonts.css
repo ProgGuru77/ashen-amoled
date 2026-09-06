@@ -1,0 +1,19 @@
+﻿/**
+ * @name Ashen Cinzel Font Definition
+ * @description Local font imports for Ashen AMOLED
+ */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/Cinzel-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/Cinzel-Bold.woff2') format('woff2');
+}
